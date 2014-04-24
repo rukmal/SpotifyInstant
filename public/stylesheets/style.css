@@ -21,8 +21,11 @@ html, body {
 	float: none;
 }
 
-#description {
+#footer {
 	margin-top: -2em;
+}
+
+.description {
 	color: white;
 }
 

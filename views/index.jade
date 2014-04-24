@@ -10,10 +10,14 @@ html
 			img#logo(src='./images/spotify_logo.png')
 			br
 			input.form-control#search(type='text' placeholder='Search here!')
+			script.
+				$(document).focus();
 			br
 			br
 			iframe#player(src='' frameborder='0' allowtransparency='true')
-			p#description Open source project by <a href='http://rukmal.me' class='link'>Rukmal Weerawarana</a> (<a href='http://twitter.com/rukmal_w' class='link'>@rukmal_w</a>).
+			div#footer
+				p.description Open source project by <a href='http://rukmal.me' class='link'>Rukmal Weerawarana</a> (<a href='http://twitter.com/rukmal_w' class='link'>@rukmal_w</a>).
+				p.description Inspired by <a href='http://karan.github.io/scInstant/' class='link'>scInstant</a> developed by <a href='http://goel.im' class='link'>Karan Goel</a>.
 			script.
 				var SPOTIFY_METADATA_URL = '//ws.spotify.com/search/1/track.json?q='
 				var SPOTIFY_PLAY_WIDGET_URL = '//embed.spotify.com/?uri='
