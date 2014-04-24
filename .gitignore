@@ -3,3 +3,6 @@
 
 # Ignoring node_modules files
 node_modules
+
+# Ignoring TODO file
+TODO
