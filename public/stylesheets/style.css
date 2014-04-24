@@ -1,8 +1,35 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+	height: 100%;
+	width: 100%;
 }
 
-a {
-  color: #00B7FF;
+.jumbotron#main {
+	padding-bottom: 0em;
+	margin-bottom: 0em;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+}
+
+#logo {
+	width: 40%;
+}
+
+#search {
+	width: 30%;
+	margin: 0 auto;
+	float: none;
+}
+
+#description {
+	color: white;
+}
+
+.link {
+	color: green;
+}
+
+.link:hover {
+	color: green;
+	text-decoration: none;
 }
