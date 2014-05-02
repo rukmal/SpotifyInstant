@@ -35,23 +35,3 @@ app.get('/', function (req, res) {
 var server = http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
-
-var io = require('socket.io').listen(server);
-var lame = require('lame');
-var speaker = require('speaker');
-var Spotify = require('spotify-web');
-
-io.sockets.on('connection', function (socket) {
-	socket.on('login-credentials', function (loginInfo) {
-		Spotify.login(loginInfo.username, loginInfo.password, function (err, spotify) {
-			socket.on('song-info', function (songInfo) {
-				spotify.get(songInfo, function (err, track) {
-					if (err) {
-						console.log(err);
-					}
-					console.log(track.play());
-				});
-			});
-		});
-	});
-});
