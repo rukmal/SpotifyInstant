@@ -25,6 +25,9 @@
         <p class="description">Inspired by <a href='http://goel.im' class='link'>Karan Goel's</a> project <a href='http://karan.github.io/scInstant/' class='link'>scInstant</a>.</p>
       </div>
       <script>
+      $(document).ready(function () {
+        $('#search').focus();
+      });
         var SPOTIFY_METADATA_URL = '//ws.spotify.com/search/1/track.json?q='
         var SPOTIFY_PLAY_WIDGET_URL = '//embed.spotify.com/?uri='
         $('#search').on('input', function() {
