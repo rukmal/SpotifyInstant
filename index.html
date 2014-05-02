@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-    <link rel="stylesheet" href="./stylesheets/style.css">
+    <title>Spotify Instant</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
@@ -19,7 +20,7 @@
     <div id="main" class="jumbotron text-center"><img id="logo" src="./images/spotify_logo.png"><br>
       <input id="search" type="text" placeholder="Start here" class="form-control text-center">
       <script>$(document).focus();</script><br><br>
-      <iframe id="player" src="" frameborder="0" allowtransparency="true" width="300" height="380"></iframe>
+      <iframe id="player" src="" frameborder="0" allowtransparency="true"></iframe>
       <div id="footer">
         <p class="description">Open source project by <a href='http://rukmal.me' class='link'>Rukmal Weerawarana</a> (<a href='http://twitter.com/rukmal_w' class='link'>@rukmal_w</a>).</p>
         <p class="description">Inspired by <a href='http://goel.im' class='link'>Karan Goel's</a> project <a href='http://karan.github.io/scInstant/' class='link'>scInstant</a>.</p>
@@ -27,6 +28,15 @@
       <script>
       $(document).ready(function () {
         $('#search').focus();
+        var pageHeightCutoffLimit = 400; // px
+        // desktop settings
+        if ($(window).height() > pageHeightCutoffLimit) {
+          var playerHeightPercentage = 45;
+          var widthOffset = 0.75;
+          var optimalHeight = $(window).height() / 100 * playerHeightPercentage;
+          $('#player').attr('height', optimalHeight);
+          $('#player').attr('width', optimalHeight * widthOffset);
+        }
       });
         var SPOTIFY_METADATA_URL = '//ws.spotify.com/search/1/track.json?q='
         var SPOTIFY_PLAY_WIDGET_URL = '//embed.spotify.com/?uri='
@@ -39,7 +49,6 @@
           // and changing the URL of the spotify now playing widget
           if (data.tracks[0]) {
            var songURL = data.tracks[0].href; // consolidating Spotify song url
-           console.log(songURL)
            $('#player').attr({
             src: SPOTIFY_PLAY_WIDGET_URL + songURL
            });
