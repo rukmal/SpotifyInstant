@@ -30,7 +30,7 @@
         $('#search').focus();
         var pageHeightCutoffLimit = 400; // px
         // desktop settings
-        if ($(window).height() > pageHeightCutoffLimit) {6em
+        if ($(window).height() > pageHeightCutoffLimit) {
           var playerHeightPercentage = 45;
           var widthOffset = 0.75;
           var optimalHeight = $(window).height() / 100 * playerHeightPercentage;
@@ -38,8 +38,8 @@
           $('#player').attr('width', optimalHeight * widthOffset);
         }
       });
-        var SPOTIFY_METADATA_URL = '//ws.spotify.com/search/1/track.json?q='
-        var SPOTIFY_PLAY_WIDGET_URL = '//embed.spotify.com/?uri='
+        var SPOTIFY_METADATA_URL = '//ws.spotify.com/search/1/track.json?q=';
+        var SPOTIFY_PLAY_WIDGET_URL = '//embed.spotify.com/?uri=';
         $('#search').on('input', function() {
          var text = $(this).val(); // getting the text from the text box
          var formattedText = text.replace(' ', '+'); // formatting the text for Spotify API
