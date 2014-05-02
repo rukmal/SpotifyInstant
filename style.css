@@ -1,6 +1,7 @@
 html, body {
 	height: 100%;
 	width: 100%;
+	background-color: black;
 }
 
 .jumbotron#main {
@@ -38,4 +39,18 @@ html, body {
 .link:hover {
 	color: green;
 	text-decoration: none;
+}
+
+@media only screen and (max-device-width: 480px) {
+	#search {
+		width: 100%;
+	}
+
+	.jumbotron#main {
+		padding-top: 3em;
+	}
+
+	#logo {
+		width: 100%;
+	}
 }
