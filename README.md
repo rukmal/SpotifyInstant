@@ -14,6 +14,6 @@ Note: Requires the Spotify desktop app to be installed.
 
 ## Contact
 
-This is an open source project released under the [MIT License](LICENSE). Contact me if you have a suggested improvement, or fork and send a pull request!
+This is an open source project released under the [MIT License](LICENSE). Contact me if you want to suggested an improvement, or fork and send a pull request!
 
 http://rukmal.me
